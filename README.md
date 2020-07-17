@@ -1,9 +1,15 @@
-# Linear_Regression
-The "train.py" file trains the linear regression model.
-The "predict.py" file takes test_X.py as input and stores predicted values in "predicted_test_Y.csv" file
-The training data files should be in the same directory with "train.py" and "predict.py".
-The training data should be stored(in csv format) with file names "train_X_lg.csv" and "train_Y_lg.csv" files or edit the path/name of your files in the "train.py"
+# HELPER FUNCTIONS
 
-Run the "train.py" to train the model
-then run "predict.py" with test_X file (in same format as "train_X_lg.csv") to get the output.
-The correctness of output can be measured by uncommenting the validation function in "predict.py" 
+To read a csv file and convert into numpy array, you can use genfromtxt of the numpy package.
+For Example:
+```
+train_data = np.genfromtxt(train_X_file_path, dtype=np.float64, delimiter=',', skip_header=1)
+```
+You can use the python csv module for writing data to csv files.
+Refer to https://docs.python.org/2/library/csv.html.
+For Example:
+```
+with open('sample_data.csv', 'w') as csv_file:
+	writer = csv.writer(csv_file)
+    writer.writerows(data)
+```
